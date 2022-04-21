@@ -10,8 +10,6 @@ import { CLOSE_MODAL_SEC } from './config.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-// https://forkify-api.herokuapp.com/v2
-
 ////////////////////////////////////////////////
 
 // Code from parcel
@@ -78,7 +76,6 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // 2. Update the recipe view
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
@@ -134,10 +131,6 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const newFeature = function () {
-  console.log('Welcome to the application.');
-};
-
 const init = function () {
   bookmarkView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -146,6 +139,5 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature();
 };
 init();
